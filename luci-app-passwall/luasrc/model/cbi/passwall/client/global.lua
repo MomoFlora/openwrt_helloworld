@@ -445,6 +445,12 @@ o:value("9.9.9.9", "9.9.9.9 (Quad9)")
 o:value("149.112.112.112", "149.112.112.112 (Quad9)")
 o:value("208.67.220.220", "208.67.220.220 (OpenDNS)")
 o:value("208.67.222.222", "208.67.222.222 (OpenDNS)")
+if nixio.fs.access("/usr/share/mosdns/mosdns.uc") then
+	local mosdns_port = string.gsub(luci.sys.exec("uci -q get mosdns.config.listen_port"), "\n", "")
+	if mosdns_port ~= nil and result ~= "" then
+		o:value("127.0.0.1:" .. mosdns_port, "127.0.0.1:" .. mosdns_port .. " (MosDNS)")
+	end
+end
 o:depends({dns_mode = "dns2socks"})
 o:depends({dns_mode = "tcp"})
 o:depends({dns_mode = "udp"})
@@ -542,7 +548,7 @@ if api.is_finded("smartdns") then
 end
 
 o = s:taboption("DNS", Flag, "dns_redirect", translate("DNS Redirect"), translate("Force special DNS server to need proxy devices."))
-o.default = "1"
+o.default = "0"
 o.rmempty = false
 
 local prefer_nft = m:get("@global_forwarding[0]", "prefer_nft") == "1"
