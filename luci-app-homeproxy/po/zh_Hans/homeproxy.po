@@ -2591,8 +2591,8 @@ msgstr "可接受的最低 TLS 版本。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:102
 #: htdocs/luci-static/resources/view/homeproxy/server.js:130
-msgid "The modern OpenWrt proxy platform for ARM64/AMD64."
-msgstr "为 ARM64/AMD64 设计的现代 OpenWrt 代理平台。"
+msgid "The modern ImmortalWrt proxy platform for ARM64/AMD64."
+msgstr "为 ARM64/AMD64 设计的现代 ImmortalWrt 代理平台。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:454
 #: htdocs/luci-static/resources/view/homeproxy/server.js:875
