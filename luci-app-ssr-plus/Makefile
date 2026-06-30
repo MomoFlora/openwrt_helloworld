@@ -48,6 +48,7 @@ LUCI_DEPENDS:= \
 
 
 define Package/$(PKG_NAME)/config
+if PACKAGE_$(PKG_NAME)
 
 choice
 	prompt "Transparent Proxy Backend"
@@ -171,6 +172,7 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR_Libev_Server
 	bool "Include ShadowsocksR Libev Server"
 	default n
 
+endif
 endef
 
 
