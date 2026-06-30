@@ -20,7 +20,6 @@ PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=LICENSE
 
 PKG_FIXUP:=autoreconf
-PKG_USE_MIPS16:=0
 PKG_BUILD_FLAGS:=no-mips16
 PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
@@ -34,7 +33,7 @@ define Package/shadowsocksr-libev/Default
     SUBMENU:=Web Servers/Proxies
     TITLE:=shadowsocksr-libev ssr-$(1)
     URL:=https://github.com/shadowsocksrr/shadowsocksr-libev
-    DEPENDS:=+libev +libsodium +libopenssl +libpthread +libpcre2 +libudns +zlib
+    DEPENDS:=+libev +libsodium +libopenssl +libpthread +libpcre2 +libudns +zlib +libopenssl-legacy
   endef
 
   define Package/shadowsocksr-libev-ssr-$(1)/install
