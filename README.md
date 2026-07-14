@@ -9,5 +9,5 @@ git clone https://github.com/MomoFlora/openwrt_helloworld package/helloworld
 
 # 更新 golang 1.26 版本
 rm -rf feeds/packages/lang/golang
-git clone https://gitea.kejizero.xyz/zhao/packages_lang_golang -b 26.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 ```
